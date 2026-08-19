@@ -3,6 +3,7 @@ import {
   X, Calendar, Clock, MapPin, Video, CheckCircle2, 
   Sparkles, MessageSquare, ArrowRight, ShieldCheck, Phone
 } from 'lucide-react';
+import { saveSubmission } from '../utils/submissionsManager';
 
 export const TourBookingModal = ({ isOpen, onClose }) => {
   const [tourType, setTourType] = useState('in-person'); // in-person or virtual
@@ -20,6 +21,21 @@ export const TourBookingModal = ({ isOpen, onClose }) => {
   const handleBook = (e) => {
     e.preventDefault();
     if (!name || !phone) return;
+
+    const tourId = `AFK-TOUR-${Math.floor(1000 + Math.random() * 9000)}`;
+
+    saveSubmission({
+      id: tourId,
+      type: 'tour',
+      applicantName: name,
+      phone: phone,
+      email: email,
+      tourType: tourType === 'in-person' ? 'In-Person Studio Tour (East Legon)' : 'Virtual 1-on-1 Portfolio Assessment',
+      selectedDate: selectedDate,
+      selectedTime: selectedTime,
+      status: 'New'
+    });
+
     setConfirmed(true);
   };
 

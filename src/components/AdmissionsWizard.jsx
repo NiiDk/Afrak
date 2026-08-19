@@ -5,6 +5,8 @@ import {
   X, CheckCircle2, ArrowRight, ArrowLeft, Sparkles, 
   Download, Printer, MessageSquare, ShieldCheck, FileText, User, Mail, Phone, Calendar, BookOpen
 } from 'lucide-react';
+import { saveSubmission } from '../utils/submissionsManager';
+import { formatCurrency } from '../utils/formatters';
 
 export const AdmissionsWizard = ({ 
   isOpen, 
@@ -57,6 +59,8 @@ export const AdmissionsWizard = ({
     setStep(prev => prev - 1);
   };
 
+  const selectedProgram = programsData.find(p => p.id === formData.programId) || programsData[0];
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateStep(step)) return;
@@ -65,6 +69,27 @@ export const AdmissionsWizard = ({
     const randomNum = Math.floor(1000 + Math.random() * 9000);
     const appId = `AFK-2026-${randomNum}`;
     setSubmittedAppId(appId);
+
+    // Save to persistent storage and trigger webhook synchronization
+    saveSubmission({
+      id: appId,
+      type: 'admissions',
+      applicantName: formData.fullName,
+      phone: formData.phone,
+      email: formData.email,
+      programId: formData.programId,
+      programTitle: selectedProgram.title,
+      intake: formData.intake,
+      schedule: formData.schedule,
+      experienceLevel: formData.experienceLevel,
+      applyingScholarship: formData.applyingScholarship,
+      scholarshipType: formData.scholarshipType,
+      statement: formData.statement,
+      portfolioLink: formData.portfolioLink,
+      tuitionEstimate: formatCurrency(selectedProgram.pricing?.GHS?.tuition || 0, 'GHS'),
+      status: 'New'
+    });
+
     setStep(4);
 
     // Trigger celebratory luxury confetti
@@ -75,8 +100,6 @@ export const AdmissionsWizard = ({
       colors: ['#D4AF37', '#FAF9F5', '#E5C358', '#C5A880']
     });
   };
-
-  const selectedProgram = programsData.find(p => p.id === formData.programId) || programsData[0];
 
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center p-3 sm:p-6 bg-obsidian-950/95 backdrop-blur-2xl animate-fade-in">

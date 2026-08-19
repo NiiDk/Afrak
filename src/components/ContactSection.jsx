@@ -3,6 +3,7 @@ import {
   MapPin, Phone, Mail, MessageSquare, Clock, 
   Send, CheckCircle2, Sparkles, Building, ArrowUpRight
 } from 'lucide-react';
+import { saveSubmission } from '../utils/submissionsManager';
 
 export const ContactSection = ({ onOpenTourModal }) => {
   const [formData, setFormData] = useState({
@@ -17,6 +18,20 @@ export const ContactSection = ({ onOpenTourModal }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.phone) return;
+
+    const inqId = `AFK-INQ-${Math.floor(1000 + Math.random() * 9000)}`;
+
+    saveSubmission({
+      id: inqId,
+      type: 'inquiry',
+      applicantName: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      status: 'New'
+    });
+
     setSubmitted(true);
   };
 
