@@ -1,25 +1,93 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Sparkles, ArrowUpRight, Compass, ShieldCheck, 
-  Award, Calendar, Users, Scissors, Play
+  Award, Calendar, Users, Scissors, Play, ChevronLeft, ChevronRight, Image as ImageIcon
 } from 'lucide-react';
 import { getIntakeCountdowns } from '../utils/formatters';
+import { getAssetUrl } from '../utils/assets';
 
 export const Hero = ({ onOpenAdmissions, onOpenTourModal, onSelectProgram }) => {
   const countdowns = getIntakeCountdowns();
 
+  // Authentic Hero Background Slides from the original Afra K website & lookbook
+  const heroBackgrounds = [
+    {
+      url: getAssetUrl("/assets/images/291A7354-scaled.jpg"),
+      title: "Haute Couture Model Showcase",
+      subtitle: "The Signature Afra K Editorial Collection"
+    },
+    {
+      url: getAssetUrl("/assets/images/291A7672-scaled.jpg"),
+      title: "Bespoke Garment Construction",
+      subtitle: "Anatomical Pattern Engineering & Tailoring"
+    },
+    {
+      url: getAssetUrl("/assets/images/291A7831-scaled.jpg"),
+      title: "Avant-Garde Draping & Silhouette",
+      subtitle: "European Moulage & Architectural Boning"
+    },
+    {
+      url: getAssetUrl("/assets/images/2S3A0842-scaled.jpg"),
+      title: "Mercedes Benz Fashion Week Runway",
+      subtitle: "Official Graduate Showcase Platform"
+    },
+    {
+      url: getAssetUrl("/assets/images/469A5403-scaled.jpg"),
+      title: "The Vanguard of African Couture",
+      subtitle: "Bespoke Bridal & Red-Carpet Excellence"
+    }
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroBackgrounds.length);
+    }, 6500);
+    return () => clearInterval(timer);
+  }, [heroBackgrounds.length]);
+
   return (
-    <section className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden pt-8 sm:pt-12 pb-16 sm:pb-20 bg-obsidian-950">
-      {/* Background High-Fashion Cinematic Layer with Subtle Gradient Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=2000&auto=format&fit=crop"
-          alt="High Fashion Haute Couture Runway"
-          className="w-full h-full object-cover object-center opacity-30 scale-105 filter brightness-75 contrast-125 transition-transform duration-10000 hover:scale-100"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/80 to-transparent"></div>
+    <section className="relative min-h-[88vh] flex flex-col justify-center overflow-hidden pt-8 sm:pt-12 pb-16 sm:pb-20 bg-obsidian-950">
+      {/* Background High-Fashion Authentic Layer with Subtle Crossfade */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {heroBackgrounds.map((bg, idx) => (
+          <div
+            key={idx}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              currentSlide === idx ? 'opacity-35 scale-105' : 'opacity-0 scale-100'
+            } transform transition-transform duration-10000`}
+          >
+            <img
+              src={bg.url}
+              alt={bg.title}
+              className="w-full h-full object-cover object-center filter brightness-90 contrast-115"
+            />
+          </div>
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/80 to-obsidian-950/40"></div>
         <div className="absolute inset-0 bg-radial-luxury opacity-60 pointer-events-none"></div>
         <div className="absolute inset-0 noise-bg opacity-30 pointer-events-none"></div>
+
+        {/* Slide Indicator Pill at Top/Bottom Right */}
+        <div className="absolute top-4 right-4 sm:top-6 sm:right-8 z-10 hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-obsidian-950/80 border border-white/10 backdrop-blur-md">
+          <ImageIcon className="w-3.5 h-3.5 text-gold-400" />
+          <span className="text-[10px] font-mono text-neutral-300 uppercase">
+            {heroBackgrounds[currentSlide].title}
+          </span>
+          <div className="flex items-center gap-1 ml-2">
+            {heroBackgrounds.map((_, dotIdx) => (
+              <button
+                key={dotIdx}
+                onClick={() => setCurrentSlide(dotIdx)}
+                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                  currentSlide === dotIdx ? 'w-5 bg-gold-400' : 'w-1.5 bg-white/25 hover:bg-white/50'
+                }`}
+                title={`Switch to slide ${dotIdx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-between">
