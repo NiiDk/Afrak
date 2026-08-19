@@ -1,4 +1,5 @@
 // Complete Authentic Data from Afra K Fashion School (afrakfashionschool.com)
+import { getAssetUrl } from '../utils/assets';
 
 export const originalSiteData = {
   institution: {
@@ -25,7 +26,7 @@ export const originalSiteData = {
       department: "Executive Leadership & Creative Direction",
       experience: "15+ Years in Haute Couture & Vocational Leadership",
       credentials: "CTVET Lead Assessor • Keynote Speaker Mercedes Benz Fashion Week",
-      image: "/assets/images/IMG_8350.JPG-scaled-e1772387379770.jpeg",
+      image: getAssetUrl("/assets/images/IMG_8350.JPG-scaled-e1772387379770.jpeg"),
       bio: "As a Ghanaian institute, we are committed to shaping the next generation of ethical fashion entrepreneurs. Our certificate courses in fashion design are grounded in practical skill development and strengthened by critical and analytical thinking. We prepare our students not only to create, but to lead, innovate, and thrive responsibly in the dynamic global fashion industry.",
       message: "When I founded Afra K Fashion School, my dream was simple: to create a space where young Ghanaians could discover their creative potential and turn passion into a thriving career. Over the past decade, I’ve watched hundreds of students blossom into confident designers, stylists, and entrepreneurs who are reshaping the African fashion narrative.",
       specialties: ["Haute Couture Masterclass", "Ethical Fashion Entrepreneurship", "Luxury Brand Strategy", "Creative Runway Direction"],
@@ -38,7 +39,7 @@ export const originalSiteData = {
       department: "Institutional Operations & Academic Planning",
       experience: "10+ Years in Institutional Management & TVET Standards",
       credentials: "Academic Registrar • Student Career Placement Director",
-      image: "/assets/images/Bethel-Mawuenam-Gbewonyo-GENERAL-MANAGER-scaled-rjyoho6g4fa05xi45i47fnh5zf77vf9pnj6pkx8k5c.png",
+      image: getAssetUrl("/assets/images/Bethel-Mawuenam-Gbewonyo-GENERAL-MANAGER-scaled-rjyoho6g4fa05xi45i47fnh5zf77vf9pnj6pkx8k5c.png"),
       bio: "Overseeing institutional administration, academic planning, TVET standards compliance, and student career placement across West Africa. Ensuring every student receives world-class vocational mentorship and seamless industry onboarding.",
       specialties: ["Academic Curriculum Planning", "TVET Quality Assurance", "Industry Placement & Internships", "Student Affairs & Welfare"],
       coursesTaught: ["Fashion Business Development", "Professional Industry Readiness"]
@@ -50,7 +51,7 @@ export const originalSiteData = {
       department: "Technical Pattern Technology & Atelier Suite",
       experience: "12+ Years in Master Pattern Engineering",
       credentials: "Senior Technical Instructor • Bodice Architecture Specialist",
-      image: "/assets/images/AMOO-AYODEJI-PATTERN-DRAFTING-GARMENT-CONSTRUCTION-FACILITATOR--scaled-e1772538859676-rjyotix6b7i6kwa8xmktvnsfocruy0bum7d5gjntog.png",
+      image: getAssetUrl("/assets/images/AMOO-AYODEJI-PATTERN-DRAFTING-GARMENT-CONSTRUCTION-FACILITATOR--scaled-e1772538859676-rjyotix6b7i6kwa8xmktvnsfocruy0bum7d5gjntog.png"),
       bio: "Master technical instructor specializing in precision anatomical measurement, bodice block engineering, and haute couture industrial finishes. Guiding students step-by-step from raw muslin draping to red-carpet ready garments.",
       specialties: ["Anatomical Pattern Drafting", "Industrial Sewing Machine Mastery", "Structural Corsetry & Boning", "Precision Garment Finishing"],
       coursesTaught: ["Pattern Drafting Technology", "Garment Construction Lab", "Niche Corsetry Intensive"]
@@ -77,28 +78,28 @@ export const originalSiteData = {
       id: "sewing-studio",
       title: "Sewing & Production Studio",
       subtitle: "Classroom & Production",
-      image: "/assets/images/DSC03270-686x1030-1.jpg",
+      image: getAssetUrl("/assets/images/DSC03270-686x1030-1.jpg"),
       description: "Our Sewing & Production Studio is fully equipped with modern industrial and domestic sewing machines, providing students with hands-on experience in garment construction. This practical environment allows learners to develop precision, technique, and confidence while working on real projects from start to finish. Students are guided through every stage of production, from fabric handling to final finishing."
     },
     {
       id: "cutting-area",
       title: "Cutting & Finishing Area",
       subtitle: "Precision Pattern Drafting",
-      image: "/assets/images/DSC04068-845x684-1.jpg",
+      image: getAssetUrl("/assets/images/DSC04068-845x684-1.jpg"),
       description: "Our Cutting & Finishing Area is designed to support accuracy and efficiency in garment production. Equipped with spacious cutting tables and essential finishing tools, this space allows students to handle fabrics with precision and care. Here, students learn the critical processes of fabric layout, cutting techniques, and final garment finishing."
     },
     {
       id: "student-hostel",
       title: "Hostel & Student Accommodation",
       subtitle: "On-Campus Living Space (GHC 6,000 / Academic Year)",
-      image: "/assets/images/Hostel.png",
+      image: getAssetUrl("/assets/images/Hostel.png"),
       description: "At Afra K Fashion School, we offer a well-equipped and inspiring environment that fosters creativity and practical skill development. Our on-campus hostel provides a safe, secure, and convenient living space situated close to training areas for easy access to classes and studios, while encouraging a focused and collaborative atmosphere."
     },
     {
       id: "orientation-classroom",
       title: "Design Lecture & Theory Classroom",
       subtitle: "Digital Illustration & Tech Lab",
-      image: "/assets/images/afrak_orientation-0025-1030x687-1.jpg",
+      image: getAssetUrl("/assets/images/afrak_orientation-0025-1030x687-1.jpg"),
       description: "Equipped for fashion illustration, entrepreneurship lecture series, and tech pack development. Where students master design sketching, business fundamentals, and ICT."
     }
   ],
@@ -109,7 +110,7 @@ export const originalSiteData = {
       brand: "Evore",
       designer: "Pamela Makafui Amevor",
       show: "2018 Mercedes Benz Fashion Week (Accra) - Afra K Graduate Show",
-      image: "/assets/images/Evore-collections-by-Pamela-Makafui-Amevor.jpg",
+      image: getAssetUrl("/assets/images/Evore-collections-by-Pamela-Makafui-Amevor.jpg"),
       quote: "Afra K gave me the technical skills and the confidence to launch Evore. Three years later, I am dressing clients across West Africa.",
       year: "Class of 2018"
     },
@@ -118,7 +119,7 @@ export const originalSiteData = {
       brand: "Kylie Amaris",
       designer: "Louisa Akua Dufie",
       show: "2018 Mercedes Benz Fashion Week (Accra) - Afra K Graduate Show",
-      image: "/assets/images/Louisa-Akua-Dufie-of-Kylie-Amaris-at-2018-Mercedes-Benz-Fashion-Week-Afra-K-Graduate-Show-1.jpg",
+      image: getAssetUrl("/assets/images/Louisa-Akua-Dufie-of-Kylie-Amaris-at-2018-Mercedes-Benz-Fashion-Week-Afra-K-Graduate-Show-1.jpg"),
       quote: "Showcasing at Mercedes Benz Fashion Week through Afra K's graduate platform opened doors to global clientele.",
       year: "Class of 2018"
     },
@@ -127,7 +128,7 @@ export const originalSiteData = {
       brand: "Akarey",
       designer: "Martina Akarey",
       show: "2018 Mercedes Benz Fashion Week (Accra) - Afra K Graduate Show",
-      image: "/assets/images/Akarey-By-Martina-Akarey-427x321-1.jpg",
+      image: getAssetUrl("/assets/images/Akarey-By-Martina-Akarey-427x321-1.jpg"),
       quote: "The rigor of pattern drafting at Afra K is unmatched. My brand Akarey now delivers bespoke couture internationally.",
       year: "Class of 2018"
     },
@@ -136,7 +137,7 @@ export const originalSiteData = {
       brand: "Eslyne",
       designer: "Benedicta Apenu",
       show: "2018 Mercedes Benz Fashion Week (Accra) - Afra K Graduate Show",
-      image: "/assets/images/Eslyne-By-Benedicta-Apenu.jpg",
+      image: getAssetUrl("/assets/images/Eslyne-By-Benedicta-Apenu.jpg"),
       quote: "From learning how to thread an industrial machine to presenting on a world runway, Afra K transformed my life.",
       year: "Class of 2018"
     },
@@ -145,7 +146,7 @@ export const originalSiteData = {
       brand: "Nifos",
       designer: "Benjamin Fosu",
       show: "2018 Mercedes Benz Fashion Week (Accra) - 'Ancient Gods' Collection",
-      image: "/assets/images/Nifos-By-Benjamin-Fosu.jpg",
+      image: getAssetUrl("/assets/images/Nifos-By-Benjamin-Fosu.jpg"),
       quote: "The mentorship I received at Afra K was invaluable. My lecturers invested in my vision for modern African menswear.",
       year: "Class of 2018"
     },
@@ -154,7 +155,7 @@ export const originalSiteData = {
       brand: "YABA Collection",
       designer: "Afra K SRC & Designers",
       show: "SRC Yaba Runway Launch",
-      image: "/assets/images/YABAp-1030x900-1-768x671.jpg",
+      image: getAssetUrl("/assets/images/YABAp-1030x900-1-768x671.jpg"),
       quote: "Fashion is an art, and fashion design extends beyond technical skill to a recognized professional discipline.",
       year: "2017/2018"
     },
@@ -163,7 +164,7 @@ export const originalSiteData = {
       brand: "Serwaa Couture",
       designer: "Ama Serwaa",
       show: "Class of 2022 Graduate Spotlight",
-      image: "/assets/images/291A7354-scaled.jpg",
+      image: getAssetUrl("/assets/images/291A7354-scaled.jpg"),
       quote: "The scholarship changed my life. I went from sketching in a market stall to running my own boutique in Accra.",
       year: "Class of 2022"
     },
@@ -172,28 +173,28 @@ export const originalSiteData = {
       brand: "KB Menswear",
       designer: "Kwame Boateng",
       show: "Class of 2023 Graduate Spotlight",
-      image: "/assets/images/291A7672-scaled.jpg",
+      image: getAssetUrl("/assets/images/291A7672-scaled.jpg"),
       quote: "Without the Founder's Scholarship, I would never have discovered my talent for menswear design. Now I dress Ghana's top executives.",
       year: "Class of 2023"
     }
   ],
 
   galleryImages: [
-    { src: "/assets/images/2018-GRAD-6.jpg", title: "2018 Graduation Cohort", category: "Graduation" },
-    { src: "/assets/images/2017-GRAD-5.jpg", title: "2017 Graduation Ceremony", category: "Graduation" },
-    { src: "/assets/images/FAR-1030x729-1-768x544.jpg", title: "Fashion Effect Runway Show", category: "Runway" },
-    { src: "/assets/images/SH3-1030x926-1-768x690.jpg", title: "Runway Showcase Graduands", category: "Runway" },
-    { src: "/assets/images/YABAp-1030x900-1-768x671.jpg", title: "YABA Runway Collection", category: "Runway" },
-    { src: "/assets/images/afrak_orientation-0025-1030x687-1.jpg", title: "Student Orientation & Atelier Session", category: "Classroom" },
-    { src: "/assets/images/DSC03270-686x1030-1.jpg", title: "Sewing & Tailoring Production Studio", category: "Studio" },
-    { src: "/assets/images/DSC04068-845x684-1.jpg", title: "Pattern Cutting & Finishing Loft", category: "Studio" },
-    { src: "/assets/images/Hostel.png", title: "On-Campus Student Hostel", category: "Facilities" },
-    { src: "/assets/images/291A7354-scaled.jpg", title: "Haute Couture Model Shoot", category: "Student Work" },
-    { src: "/assets/images/291A7672-scaled.jpg", title: "Editorial Lookbook Showcase", category: "Student Work" },
-    { src: "/assets/images/291A7831-scaled.jpg", title: "Garment Construction & Draping", category: "Student Work" },
-    { src: "/assets/images/IMG_7063.jpg", title: "Atelier Student Project Workshop", category: "Workshop" },
-    { src: "/assets/images/IMG_7164.jpg", title: "Fashion Illustration & Fitting Session", category: "Workshop" },
-    { src: "/assets/images/IMG_7108.jpg", title: "Graduation Fashion Exhibition", category: "Graduation" }
+    { src: getAssetUrl("/assets/images/2018-GRAD-6.jpg"), title: "2018 Graduation Cohort", category: "Graduation" },
+    { src: getAssetUrl("/assets/images/2017-GRAD-5.jpg"), title: "2017 Graduation Ceremony", category: "Graduation" },
+    { src: getAssetUrl("/assets/images/FAR-1030x729-1-768x544.jpg"), title: "Fashion Effect Runway Show", category: "Runway" },
+    { src: getAssetUrl("/assets/images/SH3-1030x926-1-768x690.jpg"), title: "Runway Showcase Graduands", category: "Runway" },
+    { src: getAssetUrl("/assets/images/YABAp-1030x900-1-768x671.jpg"), title: "YABA Runway Collection", category: "Runway" },
+    { src: getAssetUrl("/assets/images/afrak_orientation-0025-1030x687-1.jpg"), title: "Student Orientation & Atelier Session", category: "Classroom" },
+    { src: getAssetUrl("/assets/images/DSC03270-686x1030-1.jpg"), title: "Sewing & Tailoring Production Studio", category: "Studio" },
+    { src: getAssetUrl("/assets/images/DSC04068-845x684-1.jpg"), title: "Pattern Cutting & Finishing Loft", category: "Studio" },
+    { src: getAssetUrl("/assets/images/Hostel.png"), title: "On-Campus Student Hostel", category: "Facilities" },
+    { src: getAssetUrl("/assets/images/291A7354-scaled.jpg"), title: "Haute Couture Model Shoot", category: "Student Work" },
+    { src: getAssetUrl("/assets/images/291A7672-scaled.jpg"), title: "Editorial Lookbook Showcase", category: "Student Work" },
+    { src: getAssetUrl("/assets/images/291A7831-scaled.jpg"), title: "Garment Construction & Draping", category: "Student Work" },
+    { src: getAssetUrl("/assets/images/IMG_7063.jpg"), title: "Atelier Student Project Workshop", category: "Workshop" },
+    { src: getAssetUrl("/assets/images/IMG_7164.jpg"), title: "Fashion Illustration & Fitting Session", category: "Workshop" },
+    { src: getAssetUrl("/assets/images/IMG_7108.jpg"), title: "Graduation Fashion Exhibition", category: "Graduation" }
   ],
 
   newsAndEvents: [
@@ -202,7 +203,7 @@ export const originalSiteData = {
       title: "Head Bureaucrat of Afra K Fashion School, Lesley Aidoo Mensah to Guest Speak at Mercedes Benz Fashion Week",
       date: "Mercedes Benz Fashion Week Festival",
       category: "Keynote & Industry",
-      image: "/assets/images/IMG_8350.JPG-scaled-e1772387379770.jpeg",
+      image: getAssetUrl("/assets/images/IMG_8350.JPG-scaled-e1772387379770.jpeg"),
       excerpt: "Lesley Aidoo Mensah shares insights on building scalable African fashion brands and elevating vocational technical education to global standards."
     },
     {
@@ -210,7 +211,7 @@ export const originalSiteData = {
       title: "Afra K Graduate Show at Mercedes Benz Fashion Week: 'Evore' by Pamela Makafui Amevor",
       date: "Graduate Runway",
       category: "Runway Spotlight",
-      image: "/assets/images/Evore-collections-by-Pamela-Makafui-Amevor.jpg",
+      image: getAssetUrl("/assets/images/Evore-collections-by-Pamela-Makafui-Amevor.jpg"),
       excerpt: "A wild look at the fabulous collection from evolving Ghanaian fashion label Evore by Pamela Makafui Amevor."
     },
     {
@@ -218,7 +219,7 @@ export const originalSiteData = {
       title: "Afra K Graduate Show: 'Nifos' by Benjamin Fosu — 'Ancient Gods' Themed Collection",
       date: "Graduate Runway",
       category: "Runway Spotlight",
-      image: "/assets/images/Nifos-By-Benjamin-Fosu.jpg",
+      image: getAssetUrl("/assets/images/Nifos-By-Benjamin-Fosu.jpg"),
       excerpt: "Benjamin Fosu stuns audience with mythological and ancestral Ghanaian menswear silhouettes."
     },
     {
@@ -226,7 +227,7 @@ export const originalSiteData = {
       title: "Afra K Fashion School SRC Launches 'YABA' Runway Collection",
       date: "Annual Fashion Festival",
       category: "Campus Events",
-      image: "/assets/images/YABAp-1030x900-1-768x671.jpg",
+      image: getAssetUrl("/assets/images/YABAp-1030x900-1-768x671.jpg"),
       excerpt: "Fashion is an art: Student Representative Council unveils the prestigious YABA collection celebrating West African textiles."
     }
   ]

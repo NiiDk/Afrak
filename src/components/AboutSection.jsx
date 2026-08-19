@@ -46,7 +46,7 @@ export const AboutSection = ({ onOpenAdmissions, onOpenTourModal }) => {
                 title="Click to view full Founder profile"
               >
                 <img
-                  src="/assets/images/IMG_8350.JPG-scaled-e1772387379770.jpeg"
+                  src={managementAndFaculty[0].image}
                   alt="Lesley Aidoo Mensah - Founder & CEO"
                   className="w-full h-80 sm:h-[420px] lg:h-[520px] object-cover object-top filter brightness-95 group-hover:scale-105 transition-transform duration-700"
                 />

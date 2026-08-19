@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAssetUrl } from '../utils/assets';
 
 export const Logo = ({ 
   variant = 'full', // 'full', 'crest', 'minimal'
@@ -16,7 +17,7 @@ export const Logo = ({
     return (
       <div className={`relative flex items-center justify-center shrink-0 ${className}`}>
         <img
-          src="/afrak-crest.png"
+          src={getAssetUrl("/afrak-crest.png")}
           alt="Afra K Crest"
           className={`${sizeClasses[size] || 'h-8'} w-auto object-contain filter drop-shadow-md`}
         />
@@ -29,7 +30,7 @@ export const Logo = ({
       {/* Official Golden Eagle Crest */}
       <div className="relative shrink-0 flex items-center justify-center">
         <img
-          src="/afrak-crest.png"
+          src={getAssetUrl("/afrak-crest.png")}
           alt="Afra K Fashion School Crest"
           className={`${sizeClasses[size] || 'h-8 sm:h-9'} w-auto object-contain filter drop-shadow-[0_2px_8px_rgba(212,175,55,0.25)] group-hover:scale-105 transition-transform duration-300`}
         />
