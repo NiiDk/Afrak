@@ -7,27 +7,27 @@ export const NewsEventsSection = ({ onOpenAdmissions }) => {
   const [selectedArticle, setSelectedArticle] = useState(null);
 
   return (
-    <section id="news" className="py-24 bg-obsidian-900/40 border-t border-white/5 relative">
+    <section id="news" className="py-12 sm:py-16 md:py-24 bg-obsidian-900/40 border-t border-white/5 relative scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 gap-4 sm:gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-mono tracking-widest uppercase mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-mono tracking-widest uppercase mb-2 sm:mb-3">
               <Newspaper className="w-3.5 h-3.5" />
               <span>THE AFRAK GAZETTE & DISPATCHES</span>
             </div>
-            <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-alabaster-50 font-normal tracking-tight">
+            <h2 className="font-editorial text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-alabaster-50 font-normal tracking-tight">
               News & <span className="italic font-light text-neutral-400 font-serif">Runway Events</span>
             </h2>
-            <p className="text-neutral-300 font-light text-sm sm:text-base mt-3">
+            <p className="text-neutral-300 font-light text-xs sm:text-base mt-2 sm:mt-3">
               Official communiqués, runway reviews, alumni homecomings, and leadership keynote addresses.
             </p>
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="p-4 rounded-lg bg-obsidian-950 border border-gold-500/30 text-xs text-neutral-300">
-              <span className="text-gold-400 font-bold block mb-1 font-mono">UPCOMING MAJOR EVENT:</span>
+            <div className="p-3.5 sm:p-4 rounded-lg bg-obsidian-950 border border-gold-500/30 text-xs text-neutral-300">
+              <span className="text-gold-400 font-bold block mb-0.5 sm:mb-1 font-mono text-[11px] sm:text-xs">UPCOMING MAJOR EVENT:</span>
               <span>Annual Alumni Homecoming & Graduate Runway at National Theatre Accra</span>
             </div>
           </div>

@@ -66,50 +66,53 @@ export function App() {
         onOpenPortalModal={() => setIsPortalModalOpen(true)}
       />
 
-      {/* Main Content Flow with top padding to account for fixed navbar */}
-      <main className="flex-grow pt-[84px] sm:pt-[90px]">
-        {/* Cinematic Hero */}
-        <Hero
+      {/* Main Orchestration with Fixed Navbar Offset */}
+      <main className="pt-[74px] sm:pt-[84px]">
+        
+        {/* 1. Hero with Live Admissions Countdown Engine */}
+        <Hero 
           onOpenAdmissions={() => handleOpenAdmissions()}
           onOpenTourModal={() => setIsTourModalOpen(true)}
-          onSelectProgram={(id) => handleOpenAdmissions(id)}
+          onSelectProgram={(programId) => handleOpenAdmissions(programId)}
         />
 
-        {/* Running Luxury Ticker */}
+        {/* 2. Marquee Ticker */}
         <MarqueeTicker />
 
-        {/* 2. Complete About Us Sections: Our Story, Mission & Vision, Faculty & Management, Facilities & Hostel */}
+        {/* 3. Comprehensive Institutional About Section */}
         <AboutSection 
           onOpenAdmissions={() => handleOpenAdmissions()}
           onOpenTourModal={() => setIsTourModalOpen(true)}
         />
 
-        {/* 3. Dedicated Admissions & Guidance Section (#admissions) */}
-        <AdmissionsSection 
+        {/* 4. Complete Admissions Guidance & Fees Section (#admissions) */}
+        <AdmissionsSection
           currency={currency}
           onOpenAdmissions={() => handleOpenAdmissions()}
           onOpenTourModal={() => setIsTourModalOpen(true)}
         />
 
-        {/* 4. Academic Programs, Syllabi & Certifications (#programs) */}
-        <ProgramExplorer
+        {/* 5. Accredited Programs Curriculum (#programs) */}
+        <ProgramExplorer 
           currency={currency}
-          onSelectProgramForAdmission={(id) => handleOpenAdmissions(id)}
+          onSelectProgramForAdmission={(programId) => handleOpenAdmissions(programId)}
         />
 
-        {/* 5. Transparent Tuition & Scholarship Calculator (#tuition) */}
-        <TuitionCalculator
-          currency={currency}
+        {/* 6. Tuition & Scholarship Investment Calculator (#tuition) */}
+        <TuitionCalculator 
+          currency={currency} 
           setCurrency={setCurrency}
-          onApplyWithEstimate={handleApplyWithEstimate}
+          onApplyWithEstimate={(programId, schedule, scholarship) => 
+            handleOpenAdmissions(programId, schedule, scholarship)
+          }
         />
 
-        {/* 6. Empowerment & Scholarship Hub (#scholarships) */}
-        <ScholarshipHub
-          onApplyForScholarship={handleApplyForScholarship}
+        {/* 7. Empowerment & 10-Year Scholarship Initiative (#scholarships) */}
+        <ScholarshipHub 
+          onApplyForScholarship={() => handleOpenAdmissions('foundational-couture', 'regular', true)}
         />
 
-        {/* 7. Alumni Network & Real Brands from MBFW (#alumni) */}
+        {/* 8. Real Alumni Brands & Mercedes Benz Shows (#alumni) */}
         <AlumniSection 
           onOpenAdmissions={() => handleOpenAdmissions()}
         />
@@ -138,13 +141,13 @@ export function App() {
       />
 
       {/* Floating Action Suite */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-2.5 sm:gap-3">
         {/* Direct WhatsApp Concierge Bubble */}
         <a
           href="https://wa.me/233240187828?text=Hello%20Afra%20K%20Fashion%20School,%20I%20would%20like%20to%20inquire%20about%20admissions"
           target="_blank"
           rel="noreferrer"
-          className="group flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-3 rounded-full shadow-2xl shadow-emerald-600/40 hover:scale-105 transition-all duration-300 border border-emerald-400/30"
+          className="group flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-3 sm:px-4 sm:py-3 rounded-full shadow-2xl shadow-emerald-600/40 hover:scale-105 transition-all duration-300 border border-emerald-400/30"
           title="Chat with Admissions Director on WhatsApp"
         >
           <MessageSquare className="w-5 h-5" />
@@ -156,7 +159,7 @@ export function App() {
         {/* Scroll To Top Button */}
         <button
           onClick={scrollToTop}
-          className="w-10 h-10 rounded-full bg-obsidian-900/90 hover:bg-gold-500 hover:text-obsidian-950 border border-white/20 hover:border-gold-400 text-neutral-300 flex items-center justify-center backdrop-blur-md shadow-xl transition-all duration-300 cursor-pointer"
+          className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-obsidian-900/90 hover:bg-gold-500 hover:text-obsidian-950 border border-white/20 hover:border-gold-400 text-neutral-300 flex items-center justify-center backdrop-blur-md shadow-xl transition-all duration-300 cursor-pointer"
           title="Return to Top"
         >
           <ArrowUp className="w-4 h-4" />

@@ -73,26 +73,26 @@ export const TuitionCalculator = ({ currency, setCurrency, onApplyWithEstimate }
   }, [activeProgram, currency, scheduleType, paymentPlan, scholarshipDiscount]);
 
   return (
-    <section id="tuition" className="py-24 bg-obsidian-900/90 border-t border-white/10 relative overflow-hidden">
+    <section id="tuition" className="py-12 sm:py-16 md:py-24 bg-obsidian-900/90 border-t border-white/10 relative overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-mono uppercase tracking-widest">
             <Calculator className="w-3.5 h-3.5" />
             <span>TRANSPARENT FINANCIAL ARCHITECTURE</span>
           </div>
-          <h2 className="font-editorial text-3xl sm:text-5xl text-alabaster-50 font-normal">
+          <h2 className="font-editorial text-2xl sm:text-4xl md:text-5xl text-alabaster-50 font-normal">
             Tuition & Scholarship <br />
             <span className="text-gold-gradient font-bold">Investment Calculator</span>
           </h2>
-          <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base text-neutral-300 font-light leading-relaxed">
             Estimate your exact investment, explore flexible installment structures, and test potential scholarship deductions in real-time across multiple global currencies.
           </p>
 
           {/* Currency Switcher Bar */}
-          <div className="flex items-center justify-center gap-2 pt-2">
-            <span className="text-xs text-neutral-400 uppercase font-mono mr-2">Viewing Currency:</span>
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+            <span className="text-xs text-neutral-400 uppercase font-mono mr-1">Currency:</span>
             {['GHS', 'USD', 'EUR', 'GBP'].map((curr) => (
               <button
                 key={curr}
@@ -110,10 +110,10 @@ export const TuitionCalculator = ({ currency, setCurrency, onApplyWithEstimate }
         </div>
 
         {/* Calculator Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           
           {/* Left Column: Interactive Controls */}
-          <div className="lg:col-span-7 space-y-8 glass-card p-6 sm:p-8 rounded-lg border border-white/10 bg-obsidian-950/80">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8 glass-card p-5 sm:p-8 rounded-lg border border-white/10 bg-obsidian-950/80">
             
             {/* Step 1: Select Program */}
             <div className="space-y-3">

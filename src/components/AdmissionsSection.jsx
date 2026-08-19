@@ -10,7 +10,7 @@ export const AdmissionsSection = ({ currency = 'GHS', onOpenAdmissions, onOpenTo
   const [selectedIntake, setSelectedIntake] = useState('september');
 
   return (
-    <section id="admissions" className="py-24 bg-obsidian-950 text-alabaster-100 relative overflow-hidden border-t border-white/5 scroll-mt-24">
+    <section id="admissions" className="py-12 sm:py-16 md:py-24 bg-obsidian-950 text-alabaster-100 relative overflow-hidden border-t border-white/5 scroll-mt-24">
       {/* Background Ambience */}
       <div className="absolute top-1/4 -right-32 w-96 h-96 bg-gold-600/10 rounded-full blur-[130px] pointer-events-none"></div>
       <div className="absolute bottom-10 -left-20 w-80 h-80 bg-amber-500/5 rounded-full blur-[100px] pointer-events-none"></div>
@@ -18,30 +18,30 @@ export const AdmissionsSection = ({ currency = 'GHS', onOpenAdmissions, onOpenTo
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-mono uppercase tracking-widest mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-mono uppercase tracking-widest mb-3 sm:mb-4">
             <FileText className="w-3.5 h-3.5" />
             <span>ADMISSION GUIDANCE & TUITION 2026/2027</span>
           </div>
-          <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-alabaster-50 font-normal tracking-tight mb-4">
+          <h2 className="font-editorial text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-alabaster-50 font-normal tracking-tight mb-3 sm:mb-4">
             Admissions & <span className="italic font-light text-neutral-400 font-serif">Enrollment</span>
           </h2>
-          <p className="text-neutral-300 font-light text-sm sm:text-base leading-relaxed">
+          <p className="text-neutral-300 font-light text-xs sm:text-base leading-relaxed">
             Everything you need to know about candidate eligibility, application steps, fee schedules, flexible payment installments, on-campus hostel, and academic calendar dates.
           </p>
         </div>
 
         {/* 3-Pillar Admission Overview Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mb-10 sm:mb-16">
           
           {/* Pillar 1: Eligibility */}
-          <div className="p-8 rounded-lg bg-obsidian-900/90 border border-white/10 hover:border-gold-500/40 transition-all flex flex-col justify-between group">
+          <div className="p-5 sm:p-8 rounded-lg bg-obsidian-900/90 border border-white/10 hover:border-gold-500/40 transition-all flex flex-col justify-between group">
             <div>
-              <div className="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
-                <UserCheck className="w-6 h-6" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+                <UserCheck className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <span className="text-xs font-mono text-gold-400 uppercase tracking-widest font-bold block mb-1">PILLAR 01</span>
-              <h3 className="font-editorial text-2xl text-alabaster-50 mb-3">Applicant Eligibility</h3>
+              <span className="text-[11px] sm:text-xs font-mono text-gold-400 uppercase tracking-widest font-bold block mb-1">PILLAR 01</span>
+              <h3 className="font-editorial text-xl sm:text-2xl text-alabaster-50 mb-2 sm:mb-3">Applicant Eligibility</h3>
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed mb-4">
                 To be eligible for admission, applicants must be proficient in English (both written and spoken) and be at least 18 years of age.
               </p>
@@ -53,13 +53,13 @@ export const AdmissionsSection = ({ currency = 'GHS', onOpenAdmissions, onOpenTo
           </div>
 
           {/* Pillar 2: 3-Step Process */}
-          <div className="p-8 rounded-lg bg-obsidian-900/90 border border-white/10 hover:border-gold-500/40 transition-all flex flex-col justify-between group">
+          <div className="p-5 sm:p-8 rounded-lg bg-obsidian-900/90 border border-white/10 hover:border-gold-500/40 transition-all flex flex-col justify-between group">
             <div>
-              <div className="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
-                <FileText className="w-6 h-6" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+                <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <span className="text-xs font-mono text-gold-400 uppercase tracking-widest font-bold block mb-1">PILLAR 02</span>
-              <h3 className="font-editorial text-2xl text-alabaster-50 mb-3">Application Form</h3>
+              <span className="text-[11px] sm:text-xs font-mono text-gold-400 uppercase tracking-widest font-bold block mb-1">PILLAR 02</span>
+              <h3 className="font-editorial text-xl sm:text-2xl text-alabaster-50 mb-2 sm:mb-3">Application Form</h3>
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed mb-4">
                 Forms are obtainable from the School Administration Office in Ogbojo or submitted online with an application fee of <strong className="text-gold-300">GHC 200 (~USD 20)</strong>.
               </p>
@@ -71,13 +71,13 @@ export const AdmissionsSection = ({ currency = 'GHS', onOpenAdmissions, onOpenTo
           </div>
 
           {/* Pillar 3: Rapid 24-48h Processing */}
-          <div className="p-8 rounded-lg bg-obsidian-900/90 border border-white/10 hover:border-gold-500/40 transition-all flex flex-col justify-between group">
+          <div className="p-5 sm:p-8 rounded-lg bg-obsidian-900/90 border border-white/10 hover:border-gold-500/40 transition-all flex flex-col justify-between group">
             <div>
-              <div className="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
-                <Clock className="w-6 h-6" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+                <Clock className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <span className="text-xs font-mono text-gold-400 uppercase tracking-widest font-bold block mb-1">PILLAR 03</span>
-              <h3 className="font-editorial text-2xl text-alabaster-50 mb-3">24-48 Hour Review</h3>
+              <span className="text-[11px] sm:text-xs font-mono text-gold-400 uppercase tracking-widest font-bold block mb-1">PILLAR 03</span>
+              <h3 className="font-editorial text-xl sm:text-2xl text-alabaster-50 mb-2 sm:mb-3">24-48 Hour Review</h3>
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed mb-4">
                 Applications are processed within 24 to 48 hours of full submission. All candidates receive formal feedback and enrollment letters.
               </p>
@@ -91,39 +91,39 @@ export const AdmissionsSection = ({ currency = 'GHS', onOpenAdmissions, onOpenTo
         </div>
 
         {/* Interactive Intake & Tuition Schedule Selector */}
-        <div className="glass-card p-8 sm:p-12 rounded-xl border border-gold-500/30 bg-gradient-to-b from-obsidian-900 via-obsidian-950 to-obsidian-900 shadow-2xl mb-16">
+        <div className="glass-card p-5 sm:p-8 md:p-12 rounded-xl border border-gold-500/30 bg-gradient-to-b from-obsidian-900 via-obsidian-950 to-obsidian-900 shadow-2xl mb-10 sm:mb-16">
           
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10 mb-8">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 sm:gap-6 pb-6 sm:pb-8 border-b border-white/10 mb-6 sm:mb-8">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-gold-400 font-bold block mb-1">
+              <span className="text-[10.5px] sm:text-xs font-mono uppercase tracking-widest text-gold-400 font-bold block mb-1">
                 ACADEMIC CALENDAR & FEE STRUCTURES
               </span>
-              <h3 className="font-editorial text-2xl sm:text-3xl text-alabaster-50">
+              <h3 className="font-editorial text-xl sm:text-3xl text-alabaster-50">
                 Official Tuition & Payment Plans
               </h3>
             </div>
 
             {/* Intake Selector Toggle */}
-            <div className="flex rounded-md bg-obsidian-950 p-1 border border-white/15">
+            <div className="flex rounded-md bg-obsidian-950 p-1 border border-white/15 w-full sm:w-auto">
               <button
                 onClick={() => setSelectedIntake('september')}
-                className={`px-5 py-2 text-xs font-bold uppercase tracking-wider rounded transition-all cursor-pointer ${
+                className={`flex-1 sm:flex-initial px-4 sm:px-5 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded transition-all cursor-pointer text-center ${
                   selectedIntake === 'september'
                     ? 'bg-gold-500 text-obsidian-950 shadow-md'
                     : 'text-neutral-400 hover:text-white'
                 }`}
               >
-                September 2026 Intake
+                September 2026
               </button>
               <button
                 onClick={() => setSelectedIntake('january')}
-                className={`px-5 py-2 text-xs font-bold uppercase tracking-wider rounded transition-all cursor-pointer ${
+                className={`flex-1 sm:flex-initial px-4 sm:px-5 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded transition-all cursor-pointer text-center ${
                   selectedIntake === 'january'
                     ? 'bg-gold-500 text-obsidian-950 shadow-md'
                     : 'text-neutral-400 hover:text-white'
                 }`}
               >
-                January 2027 Intake
+                January 2027
               </button>
             </div>
           </div>

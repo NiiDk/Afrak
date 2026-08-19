@@ -14,30 +14,30 @@ export const GallerySection = () => {
     : galleryImages.filter(img => img.category === selectedCategory);
 
   return (
-    <section id="gallery" className="py-24 bg-obsidian-950 border-t border-white/5 relative">
+    <section id="gallery" className="py-12 sm:py-16 md:py-24 bg-obsidian-950 border-t border-white/5 relative scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-mono tracking-widest uppercase mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-mono tracking-widest uppercase mb-3 sm:mb-4">
             <ImageIcon className="w-3.5 h-3.5" />
             <span>ARCHIVES & EXHIBITIONS</span>
           </div>
-          <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-alabaster-50 font-normal tracking-tight mb-4">
+          <h2 className="font-editorial text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-alabaster-50 font-normal tracking-tight mb-3 sm:mb-4">
             The Visual <span className="italic font-light text-neutral-400 font-serif">Chronicles</span>
           </h2>
-          <p className="text-neutral-300 font-light text-sm sm:text-base leading-relaxed">
+          <p className="text-neutral-300 font-light text-xs sm:text-base leading-relaxed">
             Real moments from our graduation ceremonies, runway productions, cutting lofts, and student atelier workshops.
           </p>
         </div>
 
-        {/* Category Filters */}
-        <div className="flex flex-wrap justify-center items-center gap-2 mb-12">
+        {/* Category Filters (Swipeable horizontal list on mobile) */}
+        <div className="flex items-center sm:justify-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-8 sm:mb-12">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-1.5 rounded-full text-xs font-mono tracking-wider transition-all duration-300 cursor-pointer ${
+              className={`shrink-0 px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-mono tracking-wider transition-all duration-300 cursor-pointer ${
                 selectedCategory === cat
                   ? 'bg-gold-500 text-obsidian-950 font-bold shadow-md shadow-gold-500/20'
                   : 'bg-obsidian-900 border border-white/10 text-neutral-300 hover:text-white hover:border-gold-500/30'

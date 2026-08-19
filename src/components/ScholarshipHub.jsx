@@ -4,30 +4,30 @@ import { Award, CheckCircle2, Sparkles, Calendar, ArrowRight, HeartHandshake } f
 
 export const ScholarshipHub = ({ onApplyForScholarship }) => {
   return (
-    <section id="scholarships" className="py-24 bg-obsidian-950 relative overflow-hidden border-t border-white/10">
+    <section id="scholarships" className="py-12 sm:py-16 md:py-24 bg-obsidian-950 relative overflow-hidden border-t border-white/10 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-mono uppercase tracking-widest">
             <HeartHandshake className="w-3.5 h-3.5" />
             <span>EMPOWERMENT & CREATIVE ACCESS</span>
           </div>
-          <h2 className="font-editorial text-3xl sm:text-5xl text-alabaster-50 font-normal">
+          <h2 className="font-editorial text-2xl sm:text-4xl md:text-5xl text-alabaster-50 font-normal">
             10-Year Anniversary <br />
             <span className="text-gold-gradient font-bold">Scholarship & Grant Fund</span>
           </h2>
-          <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base text-neutral-300 font-light leading-relaxed">
             We believe financial constraint should never silence exceptional creative talent. Explore our merit awards, founder’s grants, and tech fellowships for the 2026/2027 academic sessions.
           </p>
         </div>
 
         {/* Scholarship Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {scholarshipData.map((sch) => (
             <div
               key={sch.id}
-              className="glass-card rounded-lg p-8 border border-white/10 hover:border-gold-500/40 transition-all duration-300 flex flex-col justify-between bg-obsidian-900/70 hover:shadow-2xl hover:shadow-gold-500/10 space-y-6"
+              className="glass-card rounded-lg p-5 sm:p-8 border border-white/10 hover:border-gold-500/40 transition-all duration-300 flex flex-col justify-between bg-obsidian-900/70 hover:shadow-2xl hover:shadow-gold-500/10 space-y-5 sm:space-y-6"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-white/10">

@@ -7,20 +7,20 @@ export const AlumniSection = ({ onOpenAdmissions }) => {
   const [selectedAlumnus, setSelectedAlumnus] = useState(null);
 
   return (
-    <section id="alumni" className="py-24 bg-obsidian-900/60 border-t border-white/5 relative">
+    <section id="alumni" className="py-12 sm:py-16 md:py-24 bg-obsidian-900/60 border-t border-white/5 relative scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 gap-4 sm:gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-mono tracking-widest uppercase mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-mono tracking-widest uppercase mb-2 sm:mb-3">
               <Award className="w-3.5 h-3.5" />
               <span>500+ GRADUATES ACROSS 12 COUNTRIES</span>
             </div>
-            <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-alabaster-50 font-normal tracking-tight">
+            <h2 className="font-editorial text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-alabaster-50 font-normal tracking-tight">
               The Alumni <span className="italic font-light text-neutral-400 font-serif">Hall of Fame</span>
             </h2>
-            <p className="text-neutral-300 font-light text-sm sm:text-base mt-3">
+            <p className="text-neutral-300 font-light text-xs sm:text-base mt-2 sm:mt-3">
               From runway spotlights at Mercedes Benz Fashion Week to successful international ateliers in Accra, London, Lagos, and Paris.
             </p>
           </div>
@@ -28,7 +28,7 @@ export const AlumniSection = ({ onOpenAdmissions }) => {
           <div className="flex items-center gap-3">
             <button
               onClick={onOpenAdmissions}
-              className="px-6 py-3 rounded-sm bg-gold-gradient text-obsidian-950 font-bold text-xs uppercase tracking-widest hover:scale-[1.02] transition-all cursor-pointer flex items-center gap-2 shadow-lg shadow-gold-500/20"
+              className="w-full sm:w-auto px-6 py-3 rounded-sm bg-gold-gradient text-obsidian-950 font-bold text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-gold-500/20"
             >
               <span>Join The Next Cohort</span>
               <ArrowRight className="w-3.5 h-3.5" />

@@ -36,7 +36,7 @@ export const ProgramExplorer = ({ currency, onSelectProgramForAdmission }) => {
   };
 
   return (
-    <section id="programs" className="py-24 bg-obsidian-950 relative overflow-hidden">
+    <section id="programs" className="py-12 sm:py-16 md:py-24 bg-obsidian-950 relative overflow-hidden scroll-mt-24">
       {/* Decorative luxury backdrops */}
       <div className="absolute top-1/4 -right-48 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-1/4 -left-48 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -189,28 +189,28 @@ export const ProgramExplorer = ({ currency, onSelectProgramForAdmission }) => {
 
       {/* Program Detail & Syllabus Modal Drawer */}
       {selectedProgram && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-obsidian-950/85 backdrop-blur-md animate-fade-in">
-          <div className="glass-card bg-obsidian-950 border border-gold-500/30 rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative">
+        <div className="fixed inset-0 z-[70] flex items-center justify-center p-3 sm:p-6 bg-obsidian-950/95 backdrop-blur-2xl animate-fade-in">
+          <div className="glass-card bg-obsidian-950 border border-gold-500/30 rounded-xl max-w-3xl w-full max-h-[92vh] overflow-y-auto p-5 sm:p-8 shadow-2xl relative">
             
             {/* Close Button */}
             <button
               onClick={() => setSelectedProgram(null)}
-              className="absolute top-5 right-5 p-2 rounded-full bg-white/5 hover:bg-white/10 text-neutral-400 hover:text-white transition-colors cursor-pointer"
+              className="absolute top-4 right-4 min-w-[36px] min-h-[36px] flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-neutral-400 hover:text-white transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
 
             {/* Modal Header */}
-            <div className="space-y-2 pb-6 border-b border-white/10">
+            <div className="space-y-2 pb-5 sm:pb-6 border-b border-white/10 pr-8">
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 bg-gold-500/20 text-gold-400 border border-gold-500/30 text-xs font-mono uppercase rounded">
+                <span className="px-2.5 py-0.5 bg-gold-500/20 text-gold-400 border border-gold-500/30 text-[10px] sm:text-xs font-mono uppercase rounded">
                   {selectedProgram.tag}
                 </span>
                 <span className="text-xs text-neutral-400 font-mono">
                   {selectedProgram.duration}
                 </span>
               </div>
-              <h3 className="font-editorial text-2xl sm:text-3xl text-alabaster-50 font-bold">
+              <h3 className="font-editorial text-xl sm:text-3xl text-alabaster-50 font-bold">
                 {selectedProgram.title}
               </h3>
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
@@ -219,12 +219,12 @@ export const ProgramExplorer = ({ currency, onSelectProgramForAdmission }) => {
             </div>
 
             {/* Schedules and Formats */}
-            <div className="py-6 border-b border-white/10 space-y-3">
+            <div className="py-5 sm:py-6 border-b border-white/10 space-y-3">
               <h4 className="text-xs uppercase font-mono tracking-widest text-gold-400 flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
                 <span>Available Attendance Formats</span>
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
                 {selectedProgram.schedules.map((sched, idx) => (
                   <div key={idx} className="bg-obsidian-900 p-3.5 rounded border border-white/5 space-y-1">
                     <span className="text-xs font-bold text-alabaster-100 block">{sched.type}</span>
@@ -239,15 +239,15 @@ export const ProgramExplorer = ({ currency, onSelectProgramForAdmission }) => {
             </div>
 
             {/* Curriculum Module Breakdown */}
-            <div className="py-6 border-b border-white/10 space-y-4">
+            <div className="py-5 sm:py-6 border-b border-white/10 space-y-3.5 sm:space-y-4">
               <h4 className="text-xs uppercase font-mono tracking-widest text-gold-400 flex items-center gap-2">
                 <Layers className="w-4 h-4" />
                 <span>Comprehensive Term-by-Term Syllabus</span>
               </h4>
 
-              <div className="space-y-3">
+              <div className="space-y-2.5 sm:space-y-3">
                 {selectedProgram.modules.map((mod, idx) => (
-                  <div key={idx} className="bg-obsidian-900/80 p-4 rounded border border-white/5 space-y-2">
+                  <div key={idx} className="bg-obsidian-900/80 p-3.5 sm:p-4 rounded border border-white/5 space-y-2">
                     <span className="text-xs font-bold text-gold-300 font-serif block">
                       {mod.term}
                     </span>
@@ -265,14 +265,14 @@ export const ProgramExplorer = ({ currency, onSelectProgramForAdmission }) => {
             </div>
 
             {/* Career Outcomes & Prerequisites */}
-            <div className="py-6 border-b border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs">
+            <div className="py-5 sm:py-6 border-b border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-xs">
               <div className="space-y-2">
                 <span className="text-neutral-400 uppercase tracking-wider font-mono block">
                   Career Pathways
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {selectedProgram.careerPaths.map((cp, idx) => (
-                    <span key={idx} className="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-neutral-200">
+                    <span key={idx} className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-200 text-[11px]">
                       {cp}
                     </span>
                   ))}
@@ -290,19 +290,19 @@ export const ProgramExplorer = ({ currency, onSelectProgramForAdmission }) => {
             </div>
 
             {/* Modal Bottom Action Controls */}
-            <div className="pt-6 flex flex-wrap items-center justify-between gap-4">
+            <div className="pt-5 sm:pt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
               <div>
-                <span className="text-xs text-neutral-400 block uppercase">Total Program Fee</span>
+                <span className="text-[11px] text-neutral-400 block uppercase font-mono">Total Tuition Fee</span>
                 <span className="text-2xl font-serif font-bold text-gold-400">
                   {formatCurrency(selectedProgram.pricing[currency]?.tuition || selectedProgram.pricing.GHS.tuition, currency)}
                 </span>
                 <span className="text-[10px] text-neutral-500 block">Registration: {formatCurrency(selectedProgram.pricing[currency]?.registration || selectedProgram.pricing.GHS.registration, currency)}</span>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
                 <button
                   onClick={() => handleDownloadSyllabus(selectedProgram.title)}
-                  className="px-4 py-3 rounded bg-obsidian-850 hover:bg-obsidian-800 border border-white/15 text-alabaster-200 text-xs uppercase font-semibold tracking-wider flex items-center gap-2 transition-colors cursor-pointer"
+                  className="w-full sm:w-auto px-4 py-3 rounded bg-obsidian-850 hover:bg-obsidian-800 border border-white/15 text-alabaster-200 text-xs uppercase font-semibold tracking-wider flex items-center justify-center gap-2 transition-colors cursor-pointer"
                 >
                   <Download className="w-4 h-4 text-gold-400" />
                   <span>{downloadSuccess ? 'Downloaded!' : 'Download Syllabus PDF'}</span>
@@ -314,7 +314,7 @@ export const ProgramExplorer = ({ currency, onSelectProgramForAdmission }) => {
                     setSelectedProgram(null);
                     onSelectProgramForAdmission(progId);
                   }}
-                  className="px-6 py-3 rounded bg-gold-gradient text-obsidian-950 font-bold text-xs uppercase tracking-wider hover:opacity-95 shadow-xl shadow-gold-500/20 cursor-pointer flex items-center gap-2"
+                  className="w-full sm:w-auto px-6 py-3 rounded bg-gold-gradient text-obsidian-950 font-bold text-xs uppercase tracking-wider hover:opacity-95 active:scale-95 shadow-xl shadow-gold-500/20 cursor-pointer flex items-center justify-center gap-2"
                 >
                   <Sparkles className="w-4 h-4" />
                   <span>Apply for this Program</span>
