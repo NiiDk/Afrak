@@ -9,6 +9,7 @@ import { originalSiteData } from '../data/originalSiteData';
 export const AboutSection = ({ onOpenAdmissions, onOpenTourModal }) => {
   const { ourStory, missionVision, managementAndFaculty, facilities } = originalSiteData;
   const [selectedFaculty, setSelectedFaculty] = useState(null);
+  const [showFullStory, setShowFullStory] = useState(false);
 
   return (
     <div id="about" className="bg-obsidian-950 text-alabaster-100 relative">
@@ -22,16 +23,16 @@ export const AboutSection = ({ onOpenAdmissions, onOpenTourModal }) => {
           
           {/* Quick Sub-Navigation Anchor Ribbon (Horizontal swipe on mobile) */}
           <div className="flex items-center sm:justify-center gap-2 sm:gap-3 mb-10 sm:mb-16 pb-3 border-b border-white/10 overflow-x-auto no-scrollbar">
-            <a href="#about-story" className="shrink-0 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gold-500/15 border border-gold-500/40 text-gold-300 text-[11px] sm:text-xs font-mono uppercase font-bold tracking-wider hover:bg-gold-500 hover:text-obsidian-950 transition-all">
+            <a href="#about-story" className="shrink-0 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gold-500/15 border border-gold-500/40 text-gold-300 text-xs sm:text-xs font-mono uppercase font-bold tracking-wider hover:bg-gold-500 hover:text-obsidian-950 transition-all">
               Our Story & CEO
             </a>
-            <a href="#about-mission" className="shrink-0 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-obsidian-900 border border-white/10 text-neutral-300 text-[11px] sm:text-xs font-mono uppercase tracking-wider hover:text-gold-300 hover:border-gold-500/40 transition-all">
+            <a href="#about-mission" className="shrink-0 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-obsidian-900 border border-white/10 text-neutral-300 text-xs sm:text-xs font-mono uppercase tracking-wider hover:text-gold-300 hover:border-gold-500/40 transition-all">
               Mission & Vision
             </a>
-            <a href="#faculty" className="shrink-0 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-obsidian-900 border border-white/10 text-neutral-300 text-[11px] sm:text-xs font-mono uppercase tracking-wider hover:text-gold-300 hover:border-gold-500/40 transition-all">
+            <a href="#faculty" className="shrink-0 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-obsidian-900 border border-white/10 text-neutral-300 text-xs sm:text-xs font-mono uppercase tracking-wider hover:text-gold-300 hover:border-gold-500/40 transition-all">
               Faculty & Management
             </a>
-            <a href="#atelier" className="shrink-0 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-obsidian-900 border border-white/10 text-neutral-300 text-[11px] sm:text-xs font-mono uppercase tracking-wider hover:text-gold-300 hover:border-gold-500/40 transition-all">
+            <a href="#atelier" className="shrink-0 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-obsidian-900 border border-white/10 text-neutral-300 text-xs sm:text-xs font-mono uppercase tracking-wider hover:text-gold-300 hover:border-gold-500/40 transition-all">
               Facilities & Hostel
             </a>
           </div>
@@ -60,7 +61,7 @@ export const AboutSection = ({ onOpenAdmissions, onOpenTourModal }) => {
                 <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
                   <span className="text-[10px] sm:text-[11px] font-mono text-gold-400 uppercase tracking-widest block mb-0.5 sm:mb-1">FOUNDER & CEO</span>
                   <h3 className="font-editorial text-xl sm:text-2xl text-alabaster-50">Lesley Aidoo Mensah</h3>
-                  <p className="text-[11px] sm:text-xs text-neutral-300 mt-1 font-light">Master Couturier & Technical Vocational Innovator</p>
+                  <p className="text-xs sm:text-xs text-neutral-300 mt-1 font-light">Master Couturier & Technical Vocational Innovator</p>
                 </div>
               </div>
             </div>
@@ -76,17 +77,34 @@ export const AboutSection = ({ onOpenAdmissions, onOpenTourModal }) => {
                 Shaping the <span className="text-gold-gradient font-bold">Future of Fashion</span>
               </h2>
 
-              <blockquote className="p-4 sm:p-6 rounded-lg bg-obsidian-900/80 border-l-4 border-gold-400 text-xs sm:text-sm md:text-base text-gold-200/90 font-serif italic leading-relaxed">
+              <blockquote className="p-4 sm:p-6 rounded-lg bg-obsidian-900/80 border-l-4 border-gold-400 text-sm sm:text-base text-gold-200/90 font-serif italic leading-relaxed">
                 “As a Ghanaian institute, we are committed to shaping the next generation of ethical fashion entrepreneurs. Our certificate courses in fashion design are grounded in practical skill development and strengthened by critical and analytical thinking. We prepare our students not only to create, but to lead, innovate, and thrive responsibly in the dynamic global fashion industry.”
-                <span className="block not-italic text-[11px] sm:text-xs font-mono text-neutral-400 mt-2">— Lesley Aidoo Mensah, CEO</span>
+                <span className="block not-italic text-xs font-mono text-neutral-400 mt-2">— Lesley Aidoo Mensah, CEO</span>
               </blockquote>
 
-              <div className="space-y-3 sm:space-y-4 text-neutral-300 font-light text-xs sm:text-base leading-relaxed">
-                {ourStory.paragraphs.map((p, idx) => (
-                  <p key={idx}>
+              <div className="space-y-3 sm:space-y-4 text-neutral-300 font-light text-sm sm:text-base leading-relaxed">
+                {/* First paragraph always visible */}
+                <p>
+                  {ourStory.paragraphs[0]}
+                </p>
+
+                {/* Additional paragraphs with progressive disclosure on mobile */}
+                {ourStory.paragraphs.slice(1).map((p, idx) => (
+                  <p 
+                    key={idx}
+                    className={showFullStory ? "block animate-fade-in" : "hidden md:block"}
+                  >
                     {p}
                   </p>
                 ))}
+
+                {/* Mobile Toggle Button */}
+                <button
+                  onClick={() => setShowFullStory(!showFullStory)}
+                  className="md:hidden inline-flex items-center gap-1.5 text-xs text-gold-400 font-mono uppercase font-semibold py-1.5 cursor-pointer underline-offset-4 hover:underline"
+                >
+                  <span>{showFullStory ? "Hide Story Details ▴" : "Read Full Story Details ▾"}</span>
+                </button>
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
@@ -214,13 +232,13 @@ export const AboutSection = ({ onOpenAdmissions, onOpenTourModal }) => {
 
                 <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                   <div>
-                    <span className="text-[9.5px] sm:text-[10px] font-mono text-neutral-400 uppercase tracking-wider block">
+                    <span className="text-[10px] sm:text-[10px] font-mono text-neutral-400 uppercase tracking-wider block">
                       {member.department}
                     </span>
                     <h3 className="font-editorial text-xl sm:text-2xl text-alabaster-50 font-medium group-hover:text-gold-300 transition-colors mt-1">
                       {member.name}
                     </h3>
-                    <p className="text-xs text-neutral-300 font-light mt-2 sm:mt-2.5 leading-relaxed line-clamp-3">
+                    <p className="text-sm sm:text-xs text-neutral-300 font-light mt-2 sm:mt-2.5 leading-relaxed line-clamp-2 sm:line-clamp-3">
                       {member.bio}
                     </p>
                   </div>
@@ -229,19 +247,19 @@ export const AboutSection = ({ onOpenAdmissions, onOpenTourModal }) => {
                   {member.specialties && (
                     <div className="flex flex-wrap gap-1.5 pt-1">
                       {member.specialties.slice(0, 2).map((spec, idx) => (
-                        <span key={idx} className="text-[9px] sm:text-[9.5px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300 font-mono">
+                        <span key={idx} className="text-[10px] sm:text-[9.5px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300 font-mono">
                           {spec}
                         </span>
                       ))}
                       {member.specialties.length > 2 && (
-                        <span className="text-[9px] px-1.5 py-0.5 rounded bg-gold-500/10 text-gold-400 font-mono">
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-gold-500/10 text-gold-400 font-mono">
                           +{member.specialties.length - 2}
                         </span>
                       )}
                     </div>
                   )}
 
-                  <div className="pt-3 border-t border-white/10 text-[11px] text-gold-400 font-medium flex items-center justify-between group-hover:text-gold-300">
+                  <div className="pt-3 border-t border-white/10 text-xs sm:text-[11px] text-gold-400 font-medium flex items-center justify-between group-hover:text-gold-300">
                     <span>View Full Profile</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -266,7 +284,7 @@ export const AboutSection = ({ onOpenAdmissions, onOpenTourModal }) => {
               <h2 className="font-editorial text-2xl sm:text-4xl md:text-5xl text-alabaster-50 font-normal tracking-tight">
                 School Facilities & <span className="italic font-light text-neutral-400 font-serif">Hostel</span>
               </h2>
-              <p className="text-neutral-300 font-light text-xs sm:text-base mt-2 sm:mt-3">
+              <p className="text-neutral-300 font-light text-sm sm:text-base mt-2 sm:mt-3">
                 Modern sewing and production studios, precision cutting lofts, digital classrooms, and safe on-campus accommodation.
               </p>
             </div>
@@ -305,7 +323,7 @@ export const AboutSection = ({ onOpenAdmissions, onOpenTourModal }) => {
                     <h3 className="font-editorial text-xl sm:text-2xl text-alabaster-50 font-normal mb-2 sm:mb-3">
                       {fac.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
+                    <p className="text-sm sm:text-sm text-neutral-300 font-light leading-relaxed line-clamp-3 sm:line-clamp-none">
                       {fac.description}
                     </p>
                   </div>

@@ -59,10 +59,10 @@ export const NewsEventsSection = ({ onOpenAdmissions }) => {
                     <Calendar className="w-3.5 h-3.5 text-gold-400" />
                     <span>{article.date}</span>
                   </div>
-                  <h3 className="font-editorial text-xl text-alabaster-50 font-normal leading-snug group-hover:text-gold-300 transition-colors">
+                  <h3 className="font-editorial text-xl sm:text-xl text-alabaster-50 font-normal leading-snug group-hover:text-gold-300 transition-colors">
                     {article.title}
                   </h3>
-                  <p className="text-xs text-neutral-300 font-light mt-3 leading-relaxed">
+                  <p className="text-sm sm:text-xs text-neutral-300 font-light mt-3 leading-relaxed line-clamp-2 sm:line-clamp-none">
                     {article.excerpt}
                   </p>
                 </div>
@@ -78,11 +78,11 @@ export const NewsEventsSection = ({ onOpenAdmissions }) => {
 
         {/* Modal for Full Article */}
         {selectedArticle && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-obsidian-950/90 backdrop-blur-xl animate-fade-in">
-            <div className="bg-obsidian-900 border border-gold-500/40 rounded-lg max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl space-y-6">
+          <div className="fixed inset-0 z-[70] flex items-center justify-center p-3 sm:p-6 bg-obsidian-950/95 backdrop-blur-2xl animate-fade-in">
+            <div className="bg-obsidian-900 border border-gold-500/40 rounded-xl max-w-2xl w-full p-5 sm:p-8 relative shadow-2xl space-y-5 sm:space-y-6 max-h-[92vh] overflow-y-auto">
               <button
                 onClick={() => setSelectedArticle(null)}
-                className="absolute top-4 right-4 p-2 text-neutral-400 hover:text-white cursor-pointer"
+                className="absolute top-4 right-4 min-w-[36px] min-h-[36px] flex items-center justify-center text-neutral-400 hover:text-white rounded-full bg-white/5 hover:bg-white/10 cursor-pointer"
               >
                 ✕
               </button>

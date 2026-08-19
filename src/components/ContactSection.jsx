@@ -150,7 +150,7 @@ export const ContactSection = ({ onOpenTourModal }) => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs uppercase font-mono text-neutral-300 block mb-1">
+                      <label className="text-xs uppercase font-mono text-neutral-300 block mb-1.5">
                         Full Name *
                       </label>
                       <input
@@ -159,12 +159,12 @@ export const ContactSection = ({ onOpenTourModal }) => {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Nana Aba Mensah"
-                        className="w-full bg-obsidian-900 border border-white/15 focus:border-gold-400 rounded p-3 text-xs text-alabaster-100 outline-none"
+                        className="w-full bg-obsidian-900 border border-white/15 focus:border-gold-400 rounded p-3.5 sm:p-3 text-sm sm:text-xs text-alabaster-100 outline-none"
                       />
                     </div>
 
                     <div>
-                      <label className="text-xs uppercase font-mono text-neutral-300 block mb-1">
+                      <label className="text-xs uppercase font-mono text-neutral-300 block mb-1.5">
                         WhatsApp Phone *
                       </label>
                       <input
@@ -173,14 +173,14 @@ export const ContactSection = ({ onOpenTourModal }) => {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="e.g. +233 24 018 7828"
-                        className="w-full bg-obsidian-900 border border-white/15 focus:border-gold-400 rounded p-3 text-xs text-alabaster-100 outline-none"
+                        className="w-full bg-obsidian-900 border border-white/15 focus:border-gold-400 rounded p-3.5 sm:p-3 text-sm sm:text-xs text-alabaster-100 outline-none"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs uppercase font-mono text-neutral-300 block mb-1">
+                      <label className="text-xs uppercase font-mono text-neutral-300 block mb-1.5">
                         Email Address
                       </label>
                       <input
@@ -188,18 +188,18 @@ export const ContactSection = ({ onOpenTourModal }) => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="name@email.com"
-                        className="w-full bg-obsidian-900 border border-white/15 focus:border-gold-400 rounded p-3 text-xs text-alabaster-100 outline-none"
+                        className="w-full bg-obsidian-900 border border-white/15 focus:border-gold-400 rounded p-3.5 sm:p-3 text-sm sm:text-xs text-alabaster-100 outline-none"
                       />
                     </div>
 
                     <div>
-                      <label className="text-xs uppercase font-mono text-neutral-300 block mb-1">
+                      <label className="text-xs uppercase font-mono text-neutral-300 block mb-1.5">
                         Inquiry Subject
                       </label>
                       <select
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full bg-obsidian-900 border border-white/15 focus:border-gold-400 rounded p-3 text-xs text-alabaster-100 outline-none"
+                        className="w-full bg-obsidian-900 border border-white/15 focus:border-gold-400 rounded p-3.5 sm:p-3 text-sm sm:text-xs text-alabaster-100 outline-none"
                       >
                         <option value="Program Admissions Inquiry">18-Month Foundational Diploma</option>
                         <option value="6-Month Studio Course">6-Month Studio Accelerated</option>
@@ -212,15 +212,15 @@ export const ContactSection = ({ onOpenTourModal }) => {
                   </div>
 
                   <div>
-                    <label className="text-xs uppercase font-mono text-neutral-300 block mb-1">
+                    <label className="text-xs uppercase font-mono text-neutral-300 block mb-1.5">
                       Your Message or Specific Questions
                     </label>
                     <textarea
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Tell us about your background, career goals, or any specific questions..."
-                      className="w-full bg-obsidian-900 border border-white/15 focus:border-gold-400 rounded p-3 text-xs text-alabaster-100 outline-none"
+                      placeholder="Tell us about your background, career goals, or schedule preferences..."
+                      className="w-full bg-obsidian-900 border border-white/15 focus:border-gold-400 rounded p-3.5 sm:p-3 text-sm sm:text-xs text-alabaster-100 outline-none"
                     />
                   </div>
 

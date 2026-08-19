@@ -41,27 +41,27 @@ export const ScholarshipHub = ({ onApplyForScholarship }) => {
                 </div>
 
                 <div>
-                  <span className="text-2xl font-serif font-bold text-gold-400 block mb-1">
+                  <span className="text-2xl sm:text-2xl font-serif font-bold text-gold-400 block mb-1">
                     {sch.award}
                   </span>
-                  <h3 className="font-serif text-lg font-bold text-alabaster-100 leading-tight">
+                  <h3 className="font-serif text-xl sm:text-lg font-bold text-alabaster-100 leading-tight">
                     {sch.name}
                   </h3>
-                  <span className="text-[11px] text-neutral-400 font-mono block mt-1">
+                  <span className="text-xs sm:text-[11px] text-neutral-400 font-mono block mt-1">
                     Eligible: {sch.openTo}
                   </span>
                 </div>
 
-                <p className="text-xs text-neutral-300 font-light leading-relaxed">
+                <p className="text-sm sm:text-xs text-neutral-300 font-light leading-relaxed line-clamp-3 sm:line-clamp-none">
                   {sch.description}
                 </p>
 
                 <div className="space-y-2 pt-2 border-t border-white/5">
-                  <span className="text-[10px] uppercase font-mono text-neutral-400 block">
+                  <span className="text-[11px] sm:text-[10px] uppercase font-mono text-neutral-400 block">
                     Key Criteria:
                   </span>
                   {sch.eligibility.map((crit, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-neutral-300">
+                    <div key={idx} className="flex items-start gap-2 text-sm sm:text-xs text-neutral-300">
                       <CheckCircle2 className="w-3.5 h-3.5 text-gold-500 shrink-0 mt-0.5" />
                       <span>{crit}</span>
                     </div>

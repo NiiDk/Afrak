@@ -61,18 +61,18 @@ export const AlumniSection = ({ onOpenAdmissions }) => {
                   <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider block">
                     FOUNDER & CREATIVE DIRECTOR
                   </span>
-                  <h3 className="font-editorial text-xl text-alabaster-50 font-semibold group-hover:text-gold-300 transition-colors">
+                  <h3 className="font-editorial text-xl sm:text-xl text-alabaster-50 font-semibold group-hover:text-gold-300 transition-colors">
                     {item.brand}
                   </h3>
-                  <p className="text-xs text-gold-400/90 font-medium">
-                    {item.designer}
+                  <p className="text-sm sm:text-xs text-gold-400 font-medium">
+                    By {item.designer}
                   </p>
-                  <p className="text-[11px] text-neutral-400 line-clamp-2 mt-2 font-light italic">
+                  <p className="text-sm sm:text-[11px] text-neutral-300 line-clamp-2 mt-2 font-light italic leading-relaxed">
                     "{item.quote}"
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-neutral-400">
+                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs sm:text-[11px] text-neutral-400">
                   <span className="truncate max-w-[180px]">{item.show}</span>
                   <ExternalLink className="w-3.5 h-3.5 text-gold-400 shrink-0" />
                 </div>
@@ -83,11 +83,11 @@ export const AlumniSection = ({ onOpenAdmissions }) => {
 
         {/* Modal Inspection for Alumnus */}
         {selectedAlumnus && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-obsidian-950/90 backdrop-blur-xl animate-fade-in">
-            <div className="bg-obsidian-900 border border-gold-500/40 rounded-lg max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl space-y-6">
+          <div className="fixed inset-0 z-[70] flex items-center justify-center p-3 sm:p-6 bg-obsidian-950/95 backdrop-blur-2xl animate-fade-in">
+            <div className="bg-obsidian-900 border border-gold-500/40 rounded-xl max-w-2xl w-full p-5 sm:p-8 relative shadow-2xl space-y-5 sm:space-y-6 max-h-[92vh] overflow-y-auto">
               <button
                 onClick={() => setSelectedAlumnus(null)}
-                className="absolute top-4 right-4 p-2 text-neutral-400 hover:text-white cursor-pointer"
+                className="absolute top-4 right-4 min-w-[36px] min-h-[36px] flex items-center justify-center text-neutral-400 hover:text-white rounded-full bg-white/5 hover:bg-white/10 cursor-pointer"
               >
                 ✕
               </button>

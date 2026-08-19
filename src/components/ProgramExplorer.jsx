@@ -119,7 +119,7 @@ export const ProgramExplorer = ({ currency, onSelectProgramForAdmission }) => {
                   </div>
 
                   {/* Body Content */}
-                  <div className="p-6 space-y-4">
+                  <div className="p-5 sm:p-6 space-y-3.5 sm:space-y-4">
                     <div>
                       <span className="text-[11px] uppercase tracking-widest text-neutral-400 font-mono">
                         {program.level}
@@ -129,18 +129,18 @@ export const ProgramExplorer = ({ currency, onSelectProgramForAdmission }) => {
                       </h3>
                     </div>
 
-                    <p className="text-xs text-neutral-300 line-clamp-3 font-light leading-relaxed">
+                    <p className="text-sm sm:text-xs text-neutral-300 line-clamp-2 sm:line-clamp-3 font-light leading-relaxed">
                       {program.shortDescription}
                     </p>
 
                     {/* Schedule Pills */}
                     <div className="pt-2 border-t border-white/5 space-y-1.5">
-                      <span className="text-[10px] uppercase tracking-wider text-neutral-400 block font-mono">
+                      <span className="text-[10px] sm:text-[10px] uppercase tracking-wider text-neutral-400 block font-mono">
                         Available Schedules:
                       </span>
                       <div className="flex flex-wrap gap-1.5">
                         {program.schedules.map((s, idx) => (
-                          <span key={idx} className="text-[10px] px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/5">
+                          <span key={idx} className="text-[10px] sm:text-[10px] px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/5">
                             {s.type.split(' ')[0]}
                           </span>
                         ))}
@@ -150,15 +150,15 @@ export const ProgramExplorer = ({ currency, onSelectProgramForAdmission }) => {
                 </div>
 
                 {/* Card Footer: Pricing & Action Buttons */}
-                <div className="p-6 pt-0 space-y-3">
-                  <div className="flex items-baseline justify-between pt-4 border-t border-white/10">
+                <div className="p-5 sm:p-6 pt-0 space-y-3">
+                  <div className="flex items-baseline justify-between pt-3.5 sm:pt-4 border-t border-white/10">
                     <div>
-                      <span className="text-[10px] uppercase text-neutral-400 block tracking-wider">Tuition Investment</span>
-                      <span className="text-xl font-serif font-bold text-gold-400">
+                      <span className="text-[10px] sm:text-[10px] uppercase text-neutral-400 block tracking-wider">Tuition Investment</span>
+                      <span className="text-xl sm:text-xl font-serif font-bold text-gold-400">
                         {formatCurrency(tuition, currency)}
                       </span>
                     </div>
-                    <span className="text-[11px] text-neutral-400">
+                    <span className="text-xs sm:text-[11px] text-neutral-400">
                       Payment Plans Available
                     </span>
                   </div>

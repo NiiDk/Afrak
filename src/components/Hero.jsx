@@ -93,15 +93,15 @@ export const Hero = ({ onOpenAdmissions, onOpenTourModal, onSelectProgram }) => 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-between">
         
         {/* Top Badges & Institutional Tagline */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6 animate-fade-in">
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-[10.5px] sm:text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-5 sm:mb-6 animate-fade-in">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-3 sm:py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs sm:text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
             <Award className="w-3.5 h-3.5 text-gold-400 shrink-0" />
             <span>CTVET & NVTI ACCREDITED</span>
           </div>
 
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-[10.5px] sm:text-xs tracking-wider backdrop-blur-md">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-3 sm:py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-xs sm:text-xs tracking-wider backdrop-blur-md">
             <Scissors className="w-3.5 h-3.5 text-gold-400 shrink-0" />
-            <span className="font-mono text-gold-300 font-bold tracking-widest text-[10px] sm:text-[11px]">LEARN • PRACTICE • BECOME</span>
+            <span className="font-mono text-gold-300 font-bold tracking-widest text-[11px] sm:text-[11px]">LEARN • PRACTICE • BECOME</span>
           </div>
 
           <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-400 text-xs tracking-wider backdrop-blur-md">
@@ -110,9 +110,9 @@ export const Hero = ({ onOpenAdmissions, onOpenTourModal, onSelectProgram }) => 
         </div>
 
         {/* Hero Main Heading & Manifesto */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-10 sm:mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-8 sm:mb-12">
           <div className="lg:col-span-8">
-            <h1 className="font-editorial text-3xl xs:text-4xl sm:text-6xl md:text-7xl xl:text-8xl font-normal leading-[1.08] tracking-tight text-alabaster-50 mb-5 sm:mb-6">
+            <h1 className="font-editorial text-3xl xs:text-4xl sm:text-6xl md:text-7xl xl:text-8xl font-normal leading-[1.08] tracking-tight text-alabaster-50 mb-4 sm:mb-6">
               The Architecture <br />
               <span className="italic font-light text-neutral-400 font-serif">of</span>{' '}
               <span className="text-gold-gradient font-bold not-italic">Haute Couture</span> <br />
@@ -121,15 +121,21 @@ export const Hero = ({ onOpenAdmissions, onOpenTourModal, onSelectProgram }) => 
               </span>
             </h1>
 
-            <p className="text-sm sm:text-base md:text-lg text-neutral-300 max-w-2xl font-light leading-relaxed mb-6 sm:mb-8">
+            {/* Mobile-Optimized Punchy Manifesto with increased font size */}
+            <p className="block md:hidden text-base sm:text-base text-neutral-200 font-light leading-relaxed mb-6">
+              West Africa’s premier fashion academy for Haute Couture, master pattern engineering, and 3D digital apparel. Admissions open in East Legon, Accra.
+            </p>
+
+            {/* Desktop Detailed Manifesto */}
+            <p className="hidden md:block text-base md:text-lg text-neutral-300 max-w-2xl font-light leading-relaxed mb-8">
               Afra K Fashion School is West Africa’s premier academy for pattern technology, European draping, 3D digital fashion, and luxury bridal engineering. Training the visionary designers defining global luxury runways.
             </p>
 
-            {/* Responsive Action Buttons (Stack on mobile, row on tablet/desktop) */}
+            {/* Responsive Action Buttons */}
             <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={onOpenAdmissions}
-                className="w-full sm:w-auto px-7 py-3.5 sm:py-4 rounded-sm bg-gold-gradient text-obsidian-950 font-extrabold text-xs uppercase tracking-ultra-wide shadow-xl shadow-gold-500/20 hover:shadow-gold-500/40 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2.5 group"
+                className="w-full sm:w-auto px-7 py-4 sm:py-4 rounded-sm bg-gold-gradient text-obsidian-950 font-extrabold text-sm sm:text-xs uppercase tracking-ultra-wide shadow-xl shadow-gold-500/20 hover:shadow-gold-500/40 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2.5 group"
               >
                 <Sparkles className="w-4 h-4 text-obsidian-950 shrink-0" />
                 <span>Apply for 2026/2027</span>
