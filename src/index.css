@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-primary: #080808;
+    --color-bg-secondary: #111111;
+    --color-bg-surface: #181818;
+    --color-accent-gold: #D4AF37;
+    --color-text-primary: #FAF9F5;
+    --color-text-muted: #9E9C94;
+    --color-border-subtle: rgba(255, 255, 255, 0.08);
+    --color-border-gold: rgba(212, 175, 55, 0.3);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Luxury Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2A2A2A;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #FFF0B8 0%, #D4AF37 50%, #9E7D22 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-silver-gradient {
+    background: linear-gradient(135deg, #FFFFFF 0%, #D1D5DB 50%, #9CA3AF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-radial-luxury {
+    background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, rgba(10, 10, 10, 0) 70%);
+  }
+
+  .bg-radial-spotlight {
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0) 75%);
+  }
+
+  .glass-card {
+    background: rgba(18, 18, 18, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .glass-card-hover {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-card-hover:hover {
+    background: rgba(24, 24, 24, 0.85);
+    border-color: rgba(212, 175, 55, 0.35);
+    box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.15);
+    transform: translateY(-3px);
+  }
+
+  .gold-border-glow {
+    box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
+  }
+
+  .font-editorial {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-cinzel-luxury {
+    font-family: 'Cinzel', serif;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Haute Couture Image Hover Effect */
+.couture-image-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.couture-image-wrap img {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.couture-image-wrap:hover img {
+  transform: scale(1.06);
+}
+
+/* Subtle Film Grain Noise Texture */
+.noise-bg {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
